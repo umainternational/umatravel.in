@@ -578,7 +578,7 @@
     flex-grow: var(--flex-grow);
     flex-shrink: var(--flex-shrink);
     order: var(--order);
-    align-self: var(--align-self)
+    align-self: var(--align-self);
 }
 
 .elementor-element.elementor-absolute,
