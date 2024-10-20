@@ -941,7 +941,6 @@ h1.entry-title {
 
 .elementor-widget-wrap>.elementor-element {
     width: 100%;
-    z-index: 1;
 }
 
 .elementor-widget-wrap.e-swiper-container {
