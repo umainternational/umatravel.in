@@ -1071,7 +1071,7 @@
                                                                 <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-32"><a href="#" aria-current="page" class="elementor-item elementor-item-active">Uma International</a></li>
                                                                 <li  onclick="myFunction()" onmouseover="myFunction()" class="dropbtn"><a class="elementor-item">Tour Packages &nbsp;<i class="fa fa-caret-down"></i></a>
                                                                     <div class="dropdown">
-                                                                        <div id="myDropdown" class="dropdown-content">
+                                                                        <div id="myDropdown" class="dropdown-content" onclick="event.stopPropagation()">
                                                                             
                                                                                 <a href="#" class="elementor-sub-item">Domestic</a>
                                                                                 <a href="#" class="elementor-sub-item">International</a>
@@ -1088,25 +1088,26 @@
                                                             </ul>
                                                         </nav>
 
-                                                        <script>
-                                                            function myFunction() {
-                                                              document.getElementById("myDropdown").classList.toggle("show");
-                                                            }
-                                                            
-                                                            // Close the dropdown if the user clicks outside of it
-                                                            window.onclick = function(event) {
-                                                              if (!event.target.matches('.dropbtn')) {
-                                                                var dropdowns = document.getElementsByClassName("dropdown-content");
-                                                                var i;
-                                                                for (i = 0; i < dropdowns.length; i++) {
-                                                                  var openDropdown = dropdowns[i];
-                                                                  if (openDropdown.classList.contains('show')) {
-                                                                    openDropdown.classList.remove('show');
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                            </script>
+<script>
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  // Check if the click is outside the dropdown and the button
+  if (!event.target.matches('.dropbtn') && !event.target.closest('.dropdown-content')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
 <style>
 .dropbtn {
   background-color: #ffffff;
@@ -1131,10 +1132,10 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   min-width: 160px;
   overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.671);
   right: 0;
   z-index: 1;
 }
@@ -1146,7 +1147,10 @@
   display: block;
 }
 
-.dropdown a:hover {background-color: #ddd;}
+.dropdown a:hover {
+    background-color: #ddd;
+    display: block;
+}
 
 .show {display: block;}
 </style>
@@ -1413,7 +1417,7 @@
                                                 <div class="elementor-element elementor-element-3bf62c5d elementor-align-center elementor-widget elementor-widget-button" data-id="3bf62c5d" data-element_type="widget" data-widget_type="button.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="elementor-button-wrapper">
-                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="https://adventrekker.com/">
+                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">View Destination </span>
 		</span>
@@ -1526,7 +1530,7 @@
                                                 <div class="elementor-element elementor-element-26cf9777 elementor-align-right elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="26cf9777" data-element_type="widget" data-widget_type="button.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="elementor-button-wrapper">
-                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="./index.php/international-travel-packages/">
+                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Discover More</span>
 		</span>
@@ -1561,7 +1565,7 @@
                                                     data-element_type="widget" data-widget_type="button.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="elementor-button-wrapper">
-                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjYwNyIsInRvZ2dsZSI6ZmFsc2V9" id="">
+                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#" id="">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Book now</span>
 		</span>
@@ -1588,7 +1592,7 @@
                                         <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-a80cf05" data-id="a80cf05" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                             <div class="elementor-widget-wrap elementor-element-populated">
                                                 <div class="elementor-element elementor-element-1fb19e87 elementor-widget elementor-widget-image" data-id="1fb19e87" data-element_type="widget" data-widget_type="image.default">
-                                                    <div class="elementor-widget-container">
+                                                    <div class="elementor-widget-container" style="position: relative; top:-21px;">
                                                         <img loading="lazy" decoding="async" width="2560" height="1707" src="./wp-content/uploads/2023/10/woman-standing-wat-phra-that-pha-son-kaew-temple-khao-kho-phetchabun-thailand-scaled.jpg" class="elementor-animation-float attachment-full size-full wp-image-244"
                                                             alt="" srcset="./wp-content/uploads/2023/10/woman-standing-wat-phra-that-pha-son-kaew-temple-khao-kho-phetchabun-thailand-scaled.jpg 2560w, ./wp-content/uploads/2023/10/woman-standing-wat-phra-that-pha-son-kaew-temple-khao-kho-phetchabun-thailand-300x200.jpg 300w, ./wp-content/uploads/2023/10/woman-standing-wat-phra-that-pha-son-kaew-temple-khao-kho-phetchabun-thailand-1024x683.jpg 1024w, ./wp-content/uploads/2023/10/woman-standing-wat-phra-that-pha-son-kaew-temple-khao-kho-phetchabun-thailand-768x512.jpg 768w, ./wp-content/uploads/2023/10/woman-standing-wat-phra-that-pha-son-kaew-temple-khao-kho-phetchabun-thailand-1536x1024.jpg 1536w, ./wp-content/uploads/2023/10/woman-standing-wat-phra-that-pha-son-kaew-temple-khao-kho-phetchabun-thailand-2048x1365.jpg 2048w"
                                                             sizes="(max-width: 2560px) 100vw, 2560px" /> </div>
@@ -1607,7 +1611,7 @@
                                                     data-element_type="widget" data-widget_type="button.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="elementor-button-wrapper">
-                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjYwNyIsInRvZ2dsZSI6ZmFsc2V9" id="">
+                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#" id="">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Book now</span>
 		</span>
@@ -1634,7 +1638,7 @@
                                         <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-77a35f23" data-id="77a35f23" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                             <div class="elementor-widget-wrap elementor-element-populated">
                                                 <div class="elementor-element elementor-element-118b22b6 elementor-widget elementor-widget-image" data-id="118b22b6" data-element_type="widget" data-widget_type="image.default">
-                                                    <div class="elementor-widget-container">
+                                                    <div class="elementor-widget-container" style="position: relative; top:-17px;">
                                                         <img loading="lazy" decoding="async" width="2560" height="1707" src="./wp-content/uploads/2023/10/dubai-skyline-evening-scaled.jpg" class="elementor-animation-float attachment-full size-full wp-image-245" alt="" srcset="./wp-content/uploads/2023/10/dubai-skyline-evening-scaled.jpg 2560w, ./wp-content/uploads/2023/10/dubai-skyline-evening-300x200.jpg 300w, ./wp-content/uploads/2023/10/dubai-skyline-evening-1024x683.jpg 1024w, ./wp-content/uploads/2023/10/dubai-skyline-evening-768x512.jpg 768w, ./wp-content/uploads/2023/10/dubai-skyline-evening-1536x1024.jpg 1536w, ./wp-content/uploads/2023/10/dubai-skyline-evening-2048x1365.jpg 2048w"
                                                             sizes="(max-width: 2560px) 100vw, 2560px" /> </div>
                                                 </div>
@@ -1652,7 +1656,7 @@
                                                     data-element_type="widget" data-widget_type="button.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="elementor-button-wrapper">
-                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjYwNyIsInRvZ2dsZSI6ZmFsc2V9" id="">
+                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#" id="">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Book now</span>
 		</span>
@@ -1683,7 +1687,7 @@
                                         <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-777ce80" data-id="777ce80" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                             <div class="elementor-widget-wrap elementor-element-populated">
                                                 <div class="elementor-element elementor-element-b03aee7 elementor-widget elementor-widget-image" data-id="b03aee7" data-element_type="widget" data-widget_type="image.default">
-                                                    <div class="elementor-widget-container">
+                                                    <div class="elementor-widget-container" style="position: relative; top: -7px;">
                                                         <img loading="lazy" decoding="async" width="2560" height="1707" src="./wp-content/uploads/2023/10/beautiful-architecture-building-exterior-city-kuala-lumpur-skyline-scaled.jpg" class="elementor-animation-float attachment-full size-full wp-image-246"
                                                             alt="" srcset="./wp-content/uploads/2023/10/beautiful-architecture-building-exterior-city-kuala-lumpur-skyline-scaled.jpg 2560w, ./wp-content/uploads/2023/10/beautiful-architecture-building-exterior-city-kuala-lumpur-skyline-300x200.jpg 300w, ./wp-content/uploads/2023/10/beautiful-architecture-building-exterior-city-kuala-lumpur-skyline-1024x683.jpg 1024w, ./wp-content/uploads/2023/10/beautiful-architecture-building-exterior-city-kuala-lumpur-skyline-768x512.jpg 768w, ./wp-content/uploads/2023/10/beautiful-architecture-building-exterior-city-kuala-lumpur-skyline-1536x1024.jpg 1536w, ./wp-content/uploads/2023/10/beautiful-architecture-building-exterior-city-kuala-lumpur-skyline-2048x1365.jpg 2048w"
                                                             sizes="(max-width: 2560px) 100vw, 2560px" /> </div>
@@ -1702,7 +1706,7 @@
                                                     data-element_type="widget" data-widget_type="button.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="elementor-button-wrapper">
-                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjYwNyIsInRvZ2dsZSI6ZmFsc2V9" id="">
+                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#" id="">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Book now</span>
 		</span>
@@ -1748,7 +1752,7 @@
                                                     data-element_type="widget" data-widget_type="button.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="elementor-button-wrapper">
-                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjYwNyIsInRvZ2dsZSI6ZmFsc2V9" id="">
+                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#" id="">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Book now</span>
 		</span>
@@ -1775,7 +1779,7 @@
                                         <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-1ac8b05" data-id="1ac8b05" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                             <div class="elementor-widget-wrap elementor-element-populated">
                                                 <div class="elementor-element elementor-element-794748a elementor-widget elementor-widget-image" data-id="794748a" data-element_type="widget" data-widget_type="image.default">
-                                                    <div class="elementor-widget-container">
+                                                    <div class="elementor-widget-container" style="position: relative; top: -11px;">
                                                         <img loading="lazy" decoding="async" width="2560" height="1707" src="./wp-content/uploads/2023/10/dubai-skyline-evening-scaled.jpg" class="elementor-animation-float attachment-full size-full wp-image-245" alt="" srcset="./wp-content/uploads/2023/10/dubai-skyline-evening-scaled.jpg 2560w, ./wp-content/uploads/2023/10/dubai-skyline-evening-300x200.jpg 300w, ./wp-content/uploads/2023/10/dubai-skyline-evening-1024x683.jpg 1024w, ./wp-content/uploads/2023/10/dubai-skyline-evening-768x512.jpg 768w, ./wp-content/uploads/2023/10/dubai-skyline-evening-1536x1024.jpg 1536w, ./wp-content/uploads/2023/10/dubai-skyline-evening-2048x1365.jpg 2048w"
                                                             sizes="(max-width: 2560px) 100vw, 2560px" /> </div>
                                                 </div>
@@ -1793,7 +1797,7 @@
                                                     data-element_type="widget" data-widget_type="button.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="elementor-button-wrapper">
-                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjYwNyIsInRvZ2dsZSI6ZmFsc2V9" id="">
+                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#" id="">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Book now</span>
 		</span>
@@ -1850,7 +1854,7 @@
                                     data-widget_type="button.default">
                                     <div class="elementor-widget-container">
                                         <div class="elementor-button-wrapper">
-                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="./index.php/test-about-us/">
+                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Explore More</span>
 		</span>
@@ -2058,7 +2062,7 @@
                                                 <div class="elementor-element elementor-element-11c5fe07 elementor-align-right elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="11c5fe07" data-element_type="widget" data-widget_type="button.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="elementor-button-wrapper">
-                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="./index.php/dmc-nepal/">
+                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Discover More</span>
 		</span>
@@ -2075,7 +2079,7 @@
                                         <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-44ce790a" data-id="44ce790a" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                             <div class="elementor-widget-wrap elementor-element-populated">
                                                 <div class="elementor-element elementor-element-404f6437 elementor-widget elementor-widget-image" data-id="404f6437" data-element_type="widget" data-widget_type="image.default">
-                                                    <div class="elementor-widget-container">
+                                                    <div class="elementor-widget-container" style="top:-13px; position: relative;">
                                                         <img loading="lazy" decoding="async" width="2048" height="1361" src="./wp-content/uploads/2023/10/Kathmandu.jpg" class="elementor-animation-float attachment-full size-full wp-image-240" alt="" srcset="./wp-content/uploads/2023/10/Kathmandu.jpg 2048w, ./wp-content/uploads/2023/10/Kathmandu-300x199.jpg 300w, ./wp-content/uploads/2023/10/Kathmandu-1024x681.jpg 1024w, ./wp-content/uploads/2023/10/Kathmandu-768x510.jpg 768w, ./wp-content/uploads/2023/10/Kathmandu-1536x1021.jpg 1536w"
                                                             sizes="(max-width: 2048px) 100vw, 2048px" /> </div>
                                                 </div>
@@ -2093,7 +2097,7 @@
                                                     data-element_type="widget" data-widget_type="button.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="elementor-button-wrapper">
-                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjYwNyIsInRvZ2dsZSI6ZmFsc2V9" id="">
+                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#" id="">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Book now</span>
 		</span>
@@ -2139,7 +2143,7 @@
                                                     data-element_type="widget" data-widget_type="button.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="elementor-button-wrapper">
-                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjYwNyIsInRvZ2dsZSI6ZmFsc2V9" id="">
+                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#" id="">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Book now</span>
 		</span>
@@ -2185,7 +2189,7 @@
                                                     data-element_type="widget" data-widget_type="button.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="elementor-button-wrapper">
-                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjYwNyIsInRvZ2dsZSI6ZmFsc2V9" id="">
+                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" href="#" id="">
 						<span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Book now</span>
 		</span>
