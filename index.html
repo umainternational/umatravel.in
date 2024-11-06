@@ -1069,19 +1069,87 @@
                                                         <nav class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-double-line e--animation-fade">
                                                             <ul id="menu-1-518a37b6" class="elementor-nav-menu">
                                                                 <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-32"><a href="#" aria-current="page" class="elementor-item elementor-item-active">Uma International</a></li>
-                                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-23"><a class="elementor-item">Tour Packages &nbsp;<i class="fa fa-caret-down"></i></a>
-                                                                    <ul class="sub-menu elementor-nav-menu--dropdown">
-                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22"><a href="#" class="elementor-sub-item">Domestic</a></li>
-                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-193"><a href="#" class="elementor-sub-item">International</a></li>
-                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-195"><a href="#" class="elementor-sub-item">Cruise</a></li>
-                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-643"><a href="#" class="elementor-sub-item">Adventure</a></li>
-                                                                    </ul>
+                                                                <li  onclick="myFunction()" onmouseover="myFunction()" class="dropbtn"><a class="elementor-item">Tour Packages &nbsp;<i class="fa fa-caret-down"></i></a>
+                                                                    <div class="dropdown">
+                                                                        <div id="myDropdown" class="dropdown-content">
+                                                                            
+                                                                                <a href="#" class="elementor-sub-item">Domestic</a>
+                                                                                <a href="#" class="elementor-sub-item">International</a>
+                                                                                <a href="#" class="elementor-sub-item">Cruise</a>
+                                                                                <a href="#" class="elementor-sub-item">Adventure</a>
+                                                                            
+                                                                        </div>
+                                                                      </div>
+                                                                      
                                                                 </li>
                                                                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-199"><a href="#" class="elementor-item">MICE</a></li>
                                                                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-200"><a href="#" class="elementor-item">DMC Nepal</a></li>
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-201"><a href="#" class="elementor-item">About Us</a></li>
                                                             </ul>
                                                         </nav>
+
+                                                        <script>
+                                                            function myFunction() {
+                                                              document.getElementById("myDropdown").classList.toggle("show");
+                                                            }
+                                                            
+                                                            // Close the dropdown if the user clicks outside of it
+                                                            window.onclick = function(event) {
+                                                              if (!event.target.matches('.dropbtn')) {
+                                                                var dropdowns = document.getElementsByClassName("dropdown-content");
+                                                                var i;
+                                                                for (i = 0; i < dropdowns.length; i++) {
+                                                                  var openDropdown = dropdowns[i];
+                                                                  if (openDropdown.classList.contains('show')) {
+                                                                    openDropdown.classList.remove('show');
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                            </script>
+<style>
+.dropbtn {
+  background-color: #ffffff;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  color: #0081a1;
+}
+
+.dropdown {
+  float: right;
+  position: relative;
+  display: block;
+  top: 35px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  right: 0;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
                                                         <div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
                                                             <i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close eicon-close"></i><span class="elementor-screen-only">Menu</span>
                                                         </div>
