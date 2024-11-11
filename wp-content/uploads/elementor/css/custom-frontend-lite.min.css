@@ -2604,7 +2604,7 @@ ul.elementor-icon-list-items.elementor-inline-items .elementor-inline-item {
 .elementor-button-text {
     flex-grow: 1;
     order: 10;
-    display: inline-block
+    display: flex;
 }
 
 .elementor-button.elementor-size-xs {
