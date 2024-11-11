@@ -1257,7 +1257,7 @@ h1.entry-title {
     }
 }
 
-@media (min-width:-1) {
+@media (min-width: -1) {
     .elementor-reverse-widescreen>.elementor-container>:first-child {
         order: 10
     }
